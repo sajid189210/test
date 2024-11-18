@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>User Sign In Page</title>
+    <link rel="stylesheet" href="/css files/userSingin.css">
+
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center" id="main-wrapper">
+        <form action="/user/signIn" method="POST" class="border border-2  px-md-5 px-3 " id="form-wrapper">
+
+            <div id="loginHead" class="mb-4 pt-4">
+                <h4><u>SIGN UP</u></h4>
+            </div>
+
+            <div class="mb-4">
+                <% if ( emailErrorMsg ) { %>
+                    <span id="message" class="mb-4 d-block">
+                        <%= emailErrorMsg %>
+                    </span>
+                    <% } %>
+                        <input type="text" class="form-control" placeholder="Enter username" name="username" required>
+            </div>
+            
+            <div class="mb-4">
+                <input type="email" class="form-control" placeholder="Enter Email" name="email"
+                    pattern="/^[a-zA-Z0-9._%+-]+@gmail\.com$/" required>
+                <% if ( mismatchEmailErrorMessage ) { %>
+                    <span id="message">
+                        <%= mismatchEmailErrorMessage %>
+                    </span>
+                    <% } %>
+
+                    <% if ( userInvalidEmailMessage ) { %>
+                        <span id="message">
+                            <%= userInvalidEmailMessage %>
+                        </span>
+                        <% } %>
+            </div>
+
+            <div class="mb-4">
+                <input type="email" class="form-control" placeholder="Confirm Email" name="confirmEmail"
+                    pattern="/^[a-zA-Z0-9._%+-]+@gmail\.com$/" required>
+                <% if ( mismatchEmailErrorMessage ) { %>
+                    <span id="message">
+                        <%= mismatchEmailErrorMessage %>
+                    </span>
+                    <% } %>
+
+                    <% if ( userInvalidEmailMessage ) { %>
+                        <span id="message">
+                            <%= userInvalidEmailMessage %>
+                        </span>
+                        <% } %>
+            </div>
+
+            <div class="mb-4">
+                <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                <% if ( mismatchPasswordErrorMessage ) { %>
+                    <span id="message">
+                        <%= mismatchPasswordErrorMessage %>
+                    </span>
+                    <% } %>
+
+                    <% if ( userInvalidPasswordMessage ) { %>
+                        <span id="message">
+                            <%= userInvalidPasswordMessage %>
+                        </span>
+                        <% } %>
+            </div>
+
+            <div class="mb-4">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword"
+                    required>
+                <% if ( mismatchPasswordErrorMessage ) { %>
+                    <span id="message">
+                        <%= mismatchPasswordErrorMessage %>
+                    </span>
+                    <% } %>
+
+                    <% if ( userInvalidPasswordMessage ) { %>
+                        <span id="message">
+                            <%= userInvalidPasswordMessage %>
+                        </span>
+                        <% } %>
+            </div>
+
+
+            <button type="submit" class="btn rounded" style="background-color: #1233ed; color: #edfbfe;">Continue</button>
+            <div class="d-flex justify-content-center my-2"><span>or</span></div>
+            <button type="submit" class="btn rounded mb-4" style="background-color: #1233ed; color: #edfbfe;">
+                <a href="/user/loginPage" class="text-decoration-none text-light">Existing user? Log In</a>
+            </button>
+
+        </form>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
